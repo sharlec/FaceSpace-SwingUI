@@ -8,9 +8,17 @@ public class AppContainer extends JFrame {
 
     // Subcomponents
     private StatusSearch statusSearch;
+    private AccountCreation accountCreation;
 
     public AppContainer(){
         super("StatusSearch");
+
+        this.setLayout(new FlowLayout());
+
+        //Create and add for account creation
+        this.accountCreation = new AccountCreation(this);
+        this.add(accountCreation);
+        this.getContentPane().add(this.accountCreation);
 
         // Create and add the main component
         this.statusSearch = new StatusSearch(this);
